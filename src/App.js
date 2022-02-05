@@ -37,14 +37,14 @@ function App() {
         <nav>
           <h1>The Ninja Clothing Company</h1>
           <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
+          <Link to="/about/*">About</Link>
           <Link to="/products">Products</Link>
         </nav>
         <Routes>
 
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/products/:id" element={<ProductDetails />} />
+          <Route path="/about/*" element={<About />} />  {/* nested route avec l'asterix, match chaque chemin après /about/, pour voir la suite allez dans about.js */}
+          <Route path="/products/:id/*" element={<ProductDetails />} />
           <Route path="/products" element={<Products />} />
           <Route path="/redirect" element={<Navigate to='/about' />} />
 
